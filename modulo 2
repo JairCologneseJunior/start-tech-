@@ -1,0 +1,132 @@
+import java.util.Scanner;
+public class modulo2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int mes = 0;
+        int ano=0;
+        boolean continuar;
+        do {
+            continuar = false;
+            try {
+                Scanner ler = new Scanner(System.in);
+                System.out.printf("Digite o numero do mes que voce queira saber o total de dias");
+                mes = ler.nextInt();
+                if (mes < 1 || mes >12 ){
+                    continuar = false;
+                }else {
+                   continuar = true;
+                }
+            }catch (Exception e){
+
+            }
+        }while (!continuar);
+
+
+
+
+
+
+        do {
+            continuar = false;
+            try {
+                Scanner lw = new Scanner(System.in);
+                System.out.printf("Digite o ano que voce esta");
+                ano = lw.nextInt();
+                if (ano < 0 ){
+                    continuar = false;
+                }else {
+                    continuar = true;
+                }
+            }catch (Exception e){
+
+            }
+        }while (!continuar);
+
+
+        int dias = 0;
+        ProgramQueDescobreOsNumerosDosMeses(mes,ano,dias);
+
+
+}
+static void ProgramQueDescobreOsNumerosDosMeses(int mes, int ano, int dias){
+    switch (mes){
+            case 1: case 3: case 5:
+            case 7: case 8: case 10: case 12:
+                dias = 31;
+                System.out.printf("a quantidade toal do  mes %d é %d", mes, dias , ano);
+                break;
+            case 4: case 6: case 9: case 11:
+                dias = 30;
+                System.out.printf("a quantidade toal do  mes %d é %d", mes, dias , ano);
+                break;
+            case 2:
+                if ( ano % 4 == 0) {
+                    dias = 29;
+                    System.out.printf("a quantidade toal do  mes %d é %d", mes, dias, ano);
+                }else{
+                    dias = 28;
+                    System.out.printf("a quantidade toal do  mes %d é %d", mes, dias , ano);}
+                break;
+            default:
+                System.out.printf("O mes chapa digita um mes que existe cuzao");
+        }
+}
+int numero;
+int op;
+int resultado;
+        System.out.printf("informe os numeros");
+        numero = sc.nextInt();
+        for (op =1; op <=10; op++);
+resultado = numero + op;
+        System.out.println(numero+ "X" + op + resultado);
+        
+
+
+
+
+        String[] nomes = new String[3];
+        int[] idades = new int[3];
+        int idadeMaisNova = 0;
+        String nomeDaPessoaMaisNova = "";
+        int idadeMaisVelha = 0;
+        String nomeDaPessoaMaisVelha = "";
+
+       for (int i =0; i<3;i++){
+           System.out.println("digite os nomes");
+       nomes[i] = sc.next();
+           System.out.println("digite as idades");
+        idades[i] = sc.nextInt();
+        }
+       for (int i = 0; i < 3; i++){
+           if (idades[i]< idadeMaisVelha){
+               idadeMaisNova = idades[i];
+             nomeDaPessoaMaisNova = nomes[i];
+           }if (idades[i]>idadeMaisNova){
+               idadeMaisVelha = idades[i];
+               nomeDaPessoaMaisVelha = nomes[i];
+           }
+       }
+        System.out.println("Pessoa Mais nova Nome: " + nomeDaPessoaMaisNova);
+        System.out.println("Pessoa Mais nova Idade: " + idadeMaisNova);
+        System.out.println("Pessoa Mais velha Nome : " + nomeDaPessoaMaisVelha);
+        System.out.println("Pessoa Mais velha Idade: " + idadeMaisVelha);
+    
+
+        System.out.println("Digite seu peso: ");
+        double peso = sc.nextDouble();
+        System.out.println("Digite sua altura: ");
+        double altura = sc.nextDouble();
+        double imc = peso / (altura * altura);
+        if (imc >= 18.5) {
+            System.out.println("Sua Classificação é de Magreza");
+        } else if (imc <= 18.5 && imc >= 24.9) ;{
+            System.out.println("Sua Classificação Está Dentro do Normal");
+        } if (imc <= 25.0 && imc >= 29.9) {
+            System.out.println("Sua Classificação é de Sobrepeso I");
+        } else if (imc <= 30.0 && imc >= 39.9) {
+            System.out.println("Sua Classificação é Obesidade II");
+        } else if (imc >= 40.0 ) {
+            System.out.println("Sua Classificação é Obesidade Grave III");
+        }
+        }
+    }
